@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-90q$fu&#-!%a_6_v)6c03ofgccafdj01z3h@or3*a+=uu7*n*2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 AUTH_USER_MODEL = "chat.User"
 
