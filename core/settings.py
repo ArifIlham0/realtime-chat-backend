@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-90q$fu&#-!%a_6_v)6c03ofgccafdj01z3h@or3*a+=uu7*n*2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', 'localhost', '127.0.0.1', '10.0.2.2']
 
 AUTH_USER_MODEL = "chat.User"
 
@@ -36,9 +36,30 @@ REST_FRAMEWORK = {
     )
 }
 
+# Thumbnail uploads
+
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
+
+# Daphne
+
+ASGI_APPLICATION = 'core.asgi.application'
+
+# Channels
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1',6379)]
+        }
+    }
+}
+
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
