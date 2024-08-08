@@ -23,12 +23,29 @@ This project was built using these technologies.
 ## Getting Started
 
 ```sh
-git clone https://github.com/ArifIlham0/realtime-chat.git
+git clone https://github.com/ArifIlham0/realtime-chat-backend.git
 ```
 ```sh
 git add *
 ```
 ```sh
-npx expo start
+pip install virtualenv
 ```
-
+```sh
+virtualenv -p python3 env
+```
+```sh
+pip install django
+```
+```sh
+django-admin startproject core
+```
+```sh
+cd core
+```
+```sh
+python manage.py runserver
+```
+- Download Redis <a href="https://github.com/tporadowski/redis/releases/download/v5.0.14.1/Redis-x64-5.0.14.1.msi">Link</a>
+- Put redis path to environment variables
+- Open CMD type redis-server
